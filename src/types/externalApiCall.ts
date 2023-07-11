@@ -9,7 +9,7 @@ export type RequestOptions = {
 
 export type ResponseObj = {
     data: any,
-    status: string | null,
+    status: number | null,
     error: {
         message: string
     } | null    
