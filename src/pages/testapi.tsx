@@ -1,6 +1,6 @@
-import { ResponseObj } from "@/types/externalApiCall";
+import { AxiosConfigOptions, HTTPMethods, RequestOptions, ResponseObj } from "@/types/externalApiCall";
 import { useEffect, useState } from "react";
-import OpenAICompletion from "./api/openai_completion";
+
 import axios from "axios";
 
 export type Card = {
@@ -26,7 +26,17 @@ const Testapi = () => {
     const [hydrated, setHydrated] = useState([BlankCard]); 
 
     const hydrate = async () => {
-        const res = await axios.get<ResponseObj>("/api/openai_completion");
+        const config: RequestOptions = {
+            [AxiosConfigOptions.url]: "/api/openai_completion",
+            [AxiosConfigOptions.method]: HTTPMethods.POST,
+            [AxiosConfigOptions.data]: {
+                name: "Joe Average",
+                gamertag: "JoeAve",
+                email: "joeaverage@here.net",
+                password: "mypass",
+            }
+        }
+        const res = await axios<ResponseObj>(config);
         console.log({res});
         const {data} = res;
         console.log({data});
