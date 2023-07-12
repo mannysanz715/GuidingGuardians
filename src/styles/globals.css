@@ -6,3 +6,8 @@
   --banner-blue : #338FD8;
 }
 
+@layer base{
+  html{
+    font-family: 'Baloo 2', cursive;
+  }
+}
