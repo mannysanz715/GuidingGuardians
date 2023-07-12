@@ -4,10 +4,31 @@
 
 :root {
   --banner-blue : #338FD8;
+  --orange-color: #F29641;
 }
 
 @layer base{
   html{
     font-family: 'Baloo 2', cursive;
   }
+}
+
+.background-color{ 
+  background-color: var(--banner-blue);
+}
+
+.input-container-width{
+  width: 823px;
+}
+
+.input-width{
+  width: 720px;
+}
+
+.orange-color{
+  background-color: var(--orange-color);
+}
+
+.input-container{
+  border:#338FD8;
 }
