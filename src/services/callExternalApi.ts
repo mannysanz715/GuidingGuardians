@@ -1,12 +1,12 @@
 import axios from "axios";
 import { RequestOptions, ResponseObj } from "@/types/externalApiCall";
 const callExternalApi = async (options: RequestOptions, payload?:Record<string,string> ) : Promise<ResponseObj> => {
-    console.log({options});
+    // console.log({options});
     try {
         const response = await axios(options);
-        console.log("callExternalApi",{response});
+        // console.log("callExternalApi",{response});
         const { data, status } = response;
-        console.log("callExternalApi",{data},{status});
+        // console.log("callExternalApi",{data},{status});
         return await new Promise<ResponseObj>((resolve) => {
             resolve({
                 data,
@@ -15,6 +15,7 @@ const callExternalApi = async (options: RequestOptions, payload?:Record<string,s
             })
         });
       } catch (error) {
+        // console.log("callExternalApi",{error});
         if (axios.isAxiosError(error)) {
             const axiosError = error;
         
@@ -38,7 +39,7 @@ const callExternalApi = async (options: RequestOptions, payload?:Record<string,s
             if (response && response.data && response.data.message) {
                 message = response.data.message;
             }
-            console.log({message});
+            // console.log({message});
             return await new Promise<ResponseObj>((resolve) => {
                 resolve({
                     data: null,
@@ -50,7 +51,7 @@ const callExternalApi = async (options: RequestOptions, payload?:Record<string,s
             });
         }
     
-        console.log({error});
+        // console.log({error});
         return await new Promise<ResponseObj>((resolve) => {
             resolve({
                 data: null,
