@@ -1,6 +1,6 @@
 import axios from "axios";
 import { RequestOptions, ResponseObj } from "@/types/externalApiCall";
-const callExternalApi = async (options: RequestOptions) : Promise<ResponseObj> => {
+const callExternalApi = async (options: RequestOptions, payload?:Record<string,string> ) : Promise<ResponseObj> => {
     console.log({options});
     try {
         const response = await axios(options);
