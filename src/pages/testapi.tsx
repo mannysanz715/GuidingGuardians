@@ -29,12 +29,10 @@ const Testapi = () => {
         const config: RequestOptions = {
             [AxiosConfigOptions.url]: "/api/openai_completion",
             [AxiosConfigOptions.method]: HTTPMethods.POST,
-            [AxiosConfigOptions.data]: {
-                name: "Joe Average",
-                gamertag: "JoeAve",
-                email: "joeaverage@here.net",
-                password: "mypass",
-            }
+            [AxiosConfigOptions.data]: [{
+                    "role": "user",
+                    "content": "Say Hello to our user."
+            }]
         }
         const res = await axios<ResponseObj>(config);
         console.log({res});
