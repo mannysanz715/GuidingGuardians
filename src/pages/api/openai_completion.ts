@@ -40,7 +40,7 @@ const OpenAICompletion = async (req: NextApiRequest, res: NextApiResponse<Respon
 
     const { data, status, error } = await callExternalApi(config);
 
-    console.log("openapi_completions",{data:data, status:status, error:error})
+    // console.log("openapi_completions",{data:data, status:status, error:error})
 
     return res.status(status ? status : 500).json({data: data, status: status, error: error});
 }

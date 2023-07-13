@@ -96,11 +96,15 @@ const Testapi = () => {
         <>
             testing api route 
             <h1>OpenAI Says</h1>
-            
-            {msgHistory && msgHistory.map((message, idx)=>{ 
-                <p key={idx}>{message.content}</p>
-            })}
-
+            <div className="bg-zinc-500 h-100 flex justify center">
+                <h1>test</h1>
+                <ul>
+                    {msgHistory && msgHistory.map((message, idx)=>{ 
+                    //    {console.log("in map:", message.content)}
+                       return <li key={idx}>{message.content}</li>
+                    })}
+                </ul>
+            </div>
             <input type="text" onChange={(e)=>{handleChange(e)}}></input>
             <button type="submit" onClick={(e)=>{handleSubmit(e)}}>submit</button>
         </>
