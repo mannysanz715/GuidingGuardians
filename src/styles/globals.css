@@ -6,6 +6,13 @@
   --banner-blue : #338FD8;
   --orange-color: #F29641;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
+*{
+  scrollbar-width: none;  /* Firefox */
+}
 
 .text-width{
   width: 700px;

@@ -101,6 +101,7 @@ const Chat = () => {
   return ( 
     <div>
       <NavBar />
+      <div className="border-t border-gray-400 mb-5"/>
       <div className="flex ml-12 chat-box-height">
         <ChatHistoryBox />
     
