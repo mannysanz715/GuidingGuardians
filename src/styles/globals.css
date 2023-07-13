@@ -40,3 +40,7 @@
 .input-container{
   border:#338FD8;
 }
+
+.chat-box-height{
+  height: 95vh;
+}
