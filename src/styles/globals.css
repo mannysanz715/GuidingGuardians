@@ -5,9 +5,19 @@
 :root {
   --banner-blue : #338FD8;
   --orange-color: #F29641;
+  --orange-text-bubble: #FFEBDC;
+  --green-text-bubble: #EBFAC0;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+.orange-bubble{
+  background-color: var(--orange-text-bubble);
+}
+
+.green-bubble{
+  background-color: var(--green-text-bubble);
 }
 
 *{
