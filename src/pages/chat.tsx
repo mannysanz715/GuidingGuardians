@@ -5,8 +5,9 @@ import axios from "axios";
 import NavBar from "@/components/NavBar/NavBar";
 import SubBanner from "@/components/SubBanner/SubBanner";
 import ChatHistoryBox from "@/components/ChatHistoryBox/ChatHistoryBox";
+import ChatBox from "@/components/ChatBox/ChatBox";
 
-type OpenAIMessage = {
+export type OpenAIMessage = {
   role: string,
   content: string,
 };
@@ -102,9 +103,9 @@ const Chat = () => {
     <div>
       <NavBar />
       <div className="border-t border-gray-400 mb-5"/>
-      <div className="flex ml-12 chat-box-height">
+      <div className="flex gap-10 ml-12 chat-box-height grow">
         <ChatHistoryBox />
-    
+        <ChatBox messages={msgHistory} />
 
       </div>
       
