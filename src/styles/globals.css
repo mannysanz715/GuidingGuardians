@@ -7,6 +7,14 @@
   --orange-color: #F29641;
 }
 
+.text-width{
+  width: 700px;
+}
+
+.text-color{ 
+  color: #737373;
+}
+
 @layer base{
   html{
     font-family: 'Baloo 2', cursive;
