@@ -15,10 +15,12 @@ const InputBanner = () => {
     else setHasText(false)
   }
 
+
+
   return (
     <div className="flex h-64 flex-col justify-center gap-10 items-center background-color">
       <h1 className="font-bold text-5xl text-white">Ask Anything!</h1>
-      <div className="input-container-width flex items-center justify-between pl-5 border rounded-3xl bg-white input-container">
+      <form onSubmit={(e) => e.preventDefault()} className="input-container-width flex items-center justify-between pl-5 border rounded-3xl bg-white input-container">
         <img src="/assets/searchIcon.png" alt="" className="h-5 w-5" />
         <input autoCorrect="off" onChange={onChange} autoComplete="off" type="text" className="input-width focus:outline-none h-9 px-3 rounded-2xl"/>
         
@@ -28,7 +30,7 @@ const InputBanner = () => {
           data :inputString
           }
         }}> <img className=" m-0 rounded-r-3xl " src={hasText ? "/assets/submitArrow.jpg" : "/assets/greySubmit.jpg"} alt="" /></Link>
-      </div>
+      </form>
     </div>
 )
 }
