@@ -11,6 +11,9 @@
 ::-webkit-scrollbar {
   display: none;
 }
+.chat-box-width{
+  width: 70vw;
+}
 
 .orange-bubble{
   background-color: var(--orange-text-bubble);
@@ -59,5 +62,5 @@
 }
 
 .chat-box-height{
-  height: 95vh;
+  height: 85vh;
 }
