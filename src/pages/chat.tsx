@@ -46,7 +46,7 @@ const Chat = () => {
     },
     {
       role: "system",
-      content: "don't tell me the answer directly. explain the result."
+      content: "don't tell me the answer directly. If possible provide a step by step approach to find the solution."
     },
     {
       role: 'user',
@@ -67,7 +67,6 @@ const Chat = () => {
   
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('line-70',userInput)
     apiCommunication([{role:"user", content: userInput}], true)
   }
   
