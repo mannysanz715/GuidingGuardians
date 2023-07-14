@@ -4,6 +4,7 @@
 
 :root {
   --banner-blue : #338FD8;
+  --info-blue : #D8EAF8;
   --orange-color: #F29641;
   --orange-text-bubble: #FFEBDC;
   --green-text-bubble: #EBFAC0;
@@ -45,6 +46,10 @@
   background-color: var(--banner-blue);
 }
 
+.info-background{
+  background-color: var(--info-blue)
+}
+
 .input-container-width{
   width: 823px;
 }
@@ -52,6 +57,7 @@
 .input-width{
   width: 720px;
 }
+
 
 .orange-color{
   background-color: var(--orange-color);
