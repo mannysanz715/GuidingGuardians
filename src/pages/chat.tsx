@@ -33,22 +33,32 @@ type OpenAIResponseT = {
 }
 
 const Chat = () => {
-  useEffect(()=>{
-    apiCommunication()
-  }, [])
   
   const router = useRouter()
   const { data } = router.query
   const stringData = data as string
   const [userInput, setUserInput] = useState(stringData)
   
-  const initialMessage = {
-    role: 'user',
-    content: userInput,
-  }
-  
+  const initialMessages = [
+    {
+      role: "system",
+      content: "you are a pleasant teacher talking to a 6th grade student."
+    },
+    {
+      role: "system",
+      content: "don't tell me the answer directly. explain the result."
+    },
+    {
+      role: 'user',
+      content: userInput,
+    }
+  ]
   //* STATE SETUP
-  const [msgHistory, setMsgHistory] = useState([initialMessage])
+  const [msgHistory, setMsgHistory] = useState(initialMessages)
+  
+  useEffect(()=>{
+    apiCommunication(initialMessages)
+  }, [])
   
   const handleChange = (e: ChangeEvent) => {
     const target = e.target as HTMLInputElement;
@@ -57,16 +67,16 @@ const Chat = () => {
   
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    apiCommunication(true)
+    apiCommunication([{role:"user", content: userInput}], true)
   }
   
-  const apiCommunication = async (shouldStore:boolean = false) => {
+  const apiCommunication = async (messages:OpenAIMessage[], shouldStore:boolean = false) => {
     const temp = [...msgHistory]
     if (shouldStore) {
-      temp.push({role: "user", content: userInput});
+      messages.map((message) => {return temp.push(message);})      
     }
-    console.log("chat userinput - apiCommunication",{userInput})
-    const resp = await hydrate(userInput);
+    console.log("chat userinput - apiCommunication",{messages})
+    const resp = await hydrate(temp);
     if (resp) {
       temp.push(resp.choices[0].message);
     }
@@ -78,14 +88,11 @@ const Chat = () => {
     });
   }
 
-  const hydrate = async (content: string) :Promise<OpenAIResponseT> => {
+  const hydrate = async (messages:OpenAIMessage[]) :Promise<OpenAIResponseT> => {
     const config: RequestOptions = {
         [AxiosConfigOptions.url]: "/api/openai_completion",
         [AxiosConfigOptions.method]: HTTPMethods.POST,
-        [AxiosConfigOptions.data]: [{
-                "role": "user",
-                "content": content
-        }]
+        [AxiosConfigOptions.data]: messages
     }
     const res = await axios<ResponseObj>(config);
     const {data, error} = res.data;
