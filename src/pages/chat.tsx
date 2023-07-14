@@ -67,6 +67,7 @@ const Chat = () => {
   
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log('line-70',userInput)
     apiCommunication([{role:"user", content: userInput}], true)
   }
   
@@ -82,8 +83,8 @@ const Chat = () => {
     }
     setMsgHistory(temp);
     console.log("chat - apiCommunication",{temp})
-    setUserInput('')
     return await new Promise<OpenAIResponseT>((resolve) => {
+      setUserInput('')
       resolve(resp)
     });
   }
