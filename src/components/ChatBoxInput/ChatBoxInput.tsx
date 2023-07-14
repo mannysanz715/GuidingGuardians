@@ -8,8 +8,13 @@ interface propsInt {
 
 const ChatBoxInput = ({value, updateFunc, submitFunc} : propsInt) => {
   async function buttonPress (e : any){
-    value = e.target.value
-    updateFunc(e)
+    console.log()
+    if(value = ''){
+      value = e.target.value
+      console.log('why is this here')
+      updateFunc(e)
+    }
+    else return
   }
 
   return ( 
