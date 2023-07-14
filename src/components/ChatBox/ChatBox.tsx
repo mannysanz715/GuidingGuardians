@@ -12,11 +12,11 @@ const ChatBox = ( {messages} : propsType ) => {
   }
   const assistantClasses = {
     div : 'w-fill flex justify-start',
-    p : 'font-semibold green-bubble p-8  rounded-3xl w-fit max-w-md h-fit'
+    p : 'font-semibold green-bubble p-8 overflow-y-scroll rounded-3xl w-fit max-w-2xl h-fit'
   }
 
   return ( 
-    <div className="flex gap-10 flex-col pr-10 grow">
+    <div className="flex gap-10 overflow-y-scroll border-b mb-5 chat-box-width  h-4/6 flex-col  mx-10">
       {messages && messages.map((message, idx) =>{
         return( 
           <div key={idx} className={message.role == 'user' ? userClasses.div : assistantClasses.div}>
