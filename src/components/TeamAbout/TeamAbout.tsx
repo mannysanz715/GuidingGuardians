@@ -10,6 +10,11 @@ const TeamAbout = () => {
       <TeamCard image="/assets/bee.png" name="Bee Johnson" title="Developer" linkedin="https://www.linkedin.com/in/beejohnson/" />
       <TeamCard image="/assets/dave.png" name="Dave Kobrin" title="Developer" linkedin="https://www.linkedin.com/in/david-kobrin-developer-in-nj/" />
     </div>
+    <div className="flex justify-between items-start px-40 my-20 ">    
+      <TeamCard image="/assets/ansley.png" name="Ansley Peace" title="UX Designer" linkedin="https://www.linkedin.com/in/ansleypeace/" />
+      <TeamCard image="/assets/joe.png" name="Joe Tsuong" title="UX Designer" linkedin="https://www.linkedin.com/in/joe-tsuong/" />
+      <TeamCard image="/assets/lacnhi.png" name="Lac Nhi Nguyen" title="UX Designer" linkedin="https://www.linkedin.com/in/lacnhi-nguyen/" />
+    </div>
     </div>
     </>
   );
