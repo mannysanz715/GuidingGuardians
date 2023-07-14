@@ -64,3 +64,10 @@
 .chat-box-height{
   height: 85vh;
 }
+
+.input-background-color{
+  background-color: #F5F5F5;
+  color: black;
+  border:1px solid #d1d1d1 ;
+  outline: none
+}
