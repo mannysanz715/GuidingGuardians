@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import SubBanner from "@/components/SubBanner/SubBanner";
 import ChatHistoryBox from "@/components/ChatHistoryBox/ChatHistoryBox";
 import ChatBox from "@/components/ChatBox/ChatBox";
+import ChatBoxInput from "@/components/ChatBoxInput/ChatBoxInput";
 
 export type OpenAIMessage = {
   role: string,
@@ -107,7 +108,7 @@ const Chat = () => {
         <ChatHistoryBox messages={msgHistory} />
         <div className="m-0 p-0">
           <ChatBox messages={msgHistory} />
-
+          <ChatBoxInput />
         </div>
       </div>
       
