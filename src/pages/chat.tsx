@@ -100,12 +100,15 @@ const Chat = () => {
 
   console.log(data)
   return ( 
-    <div className="overflow-y-none">
+    <div className="overflow-hidden">
       <NavBar />
       <div className="border-t border-gray-400 mb-5"/>
       <div className="flex gap-10 ml-12 chat-box-height grow">
         <ChatHistoryBox />
-        <ChatBox messages={msgHistory} />
+        <div className="m-0 p-0">
+          <ChatBox messages={msgHistory} />
+
+        </div>
       </div>
       
     </div>
