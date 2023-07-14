@@ -14,7 +14,7 @@ type propsTypes = {
         <h3 className="text-xl font-bold">{name}</h3>
         <p className="w-56 text-center text-color">{title}</p>
         <a href={linkedin} target="_blank">
-          <img src="https://imgur.com/mQuEctQ.png" alt="Linkedin logo" className="w-16" />
+          <img src="https://imgur.com/mQuEctQ.png" alt="Linkedin logo" className="w-16 hover:opacity-80" />
         </a>
       </div>
     );
