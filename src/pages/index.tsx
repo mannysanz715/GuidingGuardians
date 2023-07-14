@@ -10,7 +10,7 @@ export default function Home() {
     <div className=''>
       <NavBar />
       <InputBanner />
-      <SubBanner page='home' title="Make tutoring easy and fun!" info="With Guiding Guardians, help your child with schoolwork in no time. Our AI powered chatbot helps you and your <br/> child walk through problems with step-by-step help, example problems, and more!"/>
+      <SubBanner page='home' title="Make tutoring easy and fun!" info="With Guiding Guardians, help your child with schoolwork in no time. Our AI powered chatbot helps you and your child walk through problems with step-by-step help, example problems, and more!"/>
       <InfoSection />
     </div>
   )

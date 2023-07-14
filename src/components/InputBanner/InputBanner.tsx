@@ -25,7 +25,7 @@ const InputBanner = () => {
         <Link href={{
           pathname: '/chat',
           query: {
-          data :`explain without giving the answer ${inputString}`
+          data :inputString
           }
         }}> <img className=" m-0 rounded-r-3xl " src={hasText ? "/assets/submitArrow.jpg" : "/assets/greySubmit.jpg"} alt="" /></Link>
       </div>

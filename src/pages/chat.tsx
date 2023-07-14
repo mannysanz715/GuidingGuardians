@@ -106,7 +106,6 @@ const Chat = () => {
       <div className="flex gap-10 ml-12 chat-box-height grow">
         <ChatHistoryBox />
         <ChatBox messages={msgHistory} />
-
       </div>
       
     </div>
