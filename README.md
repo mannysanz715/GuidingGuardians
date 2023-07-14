@@ -19,6 +19,6 @@ We are an AI-powered chatbot designed to assist parents, guardians, sitters, and
 
 ## IceBox
 
-- [ ] Refactor Styling
-- [ ] Change Style for Calories Remaining if Below 0
-- [ ] Fix flex styling
+- [ ] Mobile Responsive Design
+- [ ] Buttons for Chat Bot
+
