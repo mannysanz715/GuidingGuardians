@@ -77,3 +77,7 @@
   border:1px solid #d1d1d1 ;
   outline: none
 }
+
+.info-width{
+  width: 80vw;
+}

@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const NavBar = () =>{
   return(
-    <div className=" flex justify-between my-6 mx-12 items-center">
+    <div className=" flex justify-between my-6 mx-20 px-14 items-center w-full ">
       <Link href='/' className="hover:opacity-80">
       <img src="/assets/logo.png" alt="GuidingGuardians"/>
       </Link>

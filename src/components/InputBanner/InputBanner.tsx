@@ -18,7 +18,7 @@ const InputBanner = () => {
 
 
   return (
-    <div className="flex h-64 flex-col justify-center gap-10 items-center background-color">
+    <div className="flex w-screen h-64 flex-col justify-center gap-10 items-center background-color">
       <h1 className="font-bold text-5xl text-white">Ask Anything!</h1>
       <form onSubmit={(e) => e.preventDefault()} className="input-container-width flex items-center justify-between pl-5 border rounded-3xl bg-white input-container">
         <img src="/assets/searchIcon.png" alt="" className="h-5 w-5" />
