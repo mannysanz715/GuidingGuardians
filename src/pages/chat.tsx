@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { AxiosConfigOptions, HTTPMethods, RequestOptions, ResponseObj } from "@/types/externalApiCall";
-import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, MouseEvent, useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "@/components/NavBar/NavBar";
 import SubBanner from "@/components/SubBanner/SubBanner";
@@ -34,37 +34,37 @@ type OpenAIResponseT = {
 
 const Chat = () => {
   useEffect(()=>{
-    const temp = [...msgHistory];
     apiCommunication()
   }, [])
-
+  
   const router = useRouter()
   const { data } = router.query
   const stringData = data as string
   const [userInput, setUserInput] = useState(stringData)
-
+  
   const initialMessage = {
     role: 'user',
     content: userInput,
   }
-
+  
   //* STATE SETUP
   const [msgHistory, setMsgHistory] = useState([initialMessage])
-
+  
   const handleChange = (e: ChangeEvent) => {
     const target = e.target as HTMLInputElement;
     setUserInput(target.value);
   }
-
-  const handleSubmit = async (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+  
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const temp = [...msgHistory];
-    
-    console.log("chat - handleSubmit",{temp})
+    apiCommunication(true)
   }
-
-  const apiCommunication = async () => {
+  
+  const apiCommunication = async (shouldStore:boolean = false) => {
     const temp = [...msgHistory]
+    if (shouldStore) {
+      temp.push({role: "user", content: userInput});
+    }
     console.log("chat userinput - apiCommunication",{userInput})
     const resp = await hydrate(userInput);
     if (resp) {
@@ -99,6 +99,7 @@ const Chat = () => {
     
   }
 
+
   console.log(data)
   return ( 
     <div className="overflow-hidden">
@@ -108,7 +109,7 @@ const Chat = () => {
         <ChatHistoryBox messages={msgHistory} />
         <div className="m-0 p-0">
           <ChatBox messages={msgHistory} />
-          <ChatBoxInput />
+          <ChatBoxInput value={userInput} updateFunc={handleChange} submitFunc={handleSubmit} />
         </div>
       </div>
       
